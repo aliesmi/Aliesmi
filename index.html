@@ -33,16 +33,7 @@
             --border-color: rgba(255, 255, 255, 0.08);
             --border-hover: rgba(59, 130, 246, 0.4);
             --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --font-heading: 'Javan', 'Vazirmatn', sans-serif;
             --font-body: 'Vazirmatn', sans-serif;
-        }
-
-        @font-face {
-            font-family: 'Javan';
-            src: url('assets/fonts/Javan.woff2') format('woff2');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
         }
 
         /* ================= RESET & BASE STYLES ================= */
@@ -97,7 +88,6 @@
         }
 
         .section-title h2 {
-            font-family: var(--font-heading);
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
@@ -148,13 +138,7 @@
             gap: 0.75rem;
         }
 
-        .logo-wrapper img {
-            height: 40px;
-            object-fit: contain;
-        }
-
         .logo-placeholder {
-            font-family: var(--font-heading);
             font-weight: 800;
             font-size: 1.25rem;
             letter-spacing: -0.5px;
@@ -231,26 +215,27 @@
         }
 
         /* ================= HERO SECTION ================= */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding-top: 8rem;
-            overflow: hidden;
-        }
+.hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-top: 8rem;
+        overflow: hidden;
+    }
 
-        #hero-animation {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            opacity: 0.4;
-            pointer-events: none;
-        }
-        #hero-animation video {
+    #hero-animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0.4;
+        pointer-events: none;
+    }
+
+    #hero-animation video {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -288,7 +273,6 @@
         }
 
         .hero h1 {
-            font-family: var(--font-heading);
             font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.2;
@@ -311,6 +295,8 @@
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 5;
         }
 
         .btn {
@@ -412,17 +398,6 @@
             justify-content: center;
         }
 
-        .portfolio-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .portfolio-card:hover .portfolio-img-wrapper img {
-            transform: scale(1.05);
-        }
-
         .portfolio-placeholder-img {
             color: var(--text-muted);
             font-size: 0.9rem;
@@ -452,7 +427,6 @@
         }
 
         .portfolio-card h3 {
-            font-family: var(--font-heading);
             font-size: 1.35rem;
             margin-bottom: 0.75rem;
         }
@@ -489,21 +463,13 @@
             font-size: 0.95rem;
         }
 
-        .portfolio-link i {
-            transition: transform 0.3s ease;
-        }
-
         .portfolio-link:hover {
             color: var(--accent);
         }
 
-        [dir="rtl"] .portfolio-link:hover i {
-            transform: translateX(-5px);
-        }
-
-        [dir="ltr"] .portfolio-link:hover i {
-            transform: translateX(5px);
-        }
+        [dir="rtl"] .portfolio-link:hover i { transform: translateX(-5px); }
+        [dir="ltr"] .portfolio-link:hover i { transform: translateX(5px); }
+        .portfolio-link i { transition: transform 0.3s ease; }
 
         /* ================= ABOUT ME ================= */
         .about-grid {
@@ -514,7 +480,6 @@
         }
 
         .about-text h3 {
-            font-family: var(--font-heading);
             font-size: 2rem;
             margin-bottom: 1.5rem;
             line-height: 1.3;
@@ -562,7 +527,6 @@
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .bento-item {
@@ -616,7 +580,7 @@
             100% { opacity: 1; transform: scale(1); }
         }
 
-        /* ================= SKILLS / TOOLS ================= */
+        /* ================= SKILLS ================= */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -656,7 +620,7 @@
             font-weight: 600;
         }
 
-        /* ================= EXPERIENCE TIMELINE ================= */
+        /* ================= TIMELINE ================= */
         .timeline {
             position: relative;
             max-width: 800px;
@@ -705,12 +669,6 @@
             border-radius: 16px;
             padding: 2rem;
             backdrop-filter: blur(10px);
-            transition: var(--transition-smooth);
-        }
-
-        .timeline-content:hover {
-            border-color: var(--border-hover);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
         .timeline-date {
@@ -722,7 +680,6 @@
         }
 
         .timeline-content h3 {
-            font-family: var(--font-heading);
             font-size: 1.25rem;
             margin-bottom: 0.25rem;
         }
@@ -738,12 +695,10 @@
             font-size: 0.95rem;
         }
 
-        /* ================= FINAL CTA ================= */
+        /* ================= CTA & CONTACT ================= */
         .final-cta {
             padding: 6rem 2rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
         .cta-box {
@@ -753,13 +708,10 @@
             border: 1px solid rgba(59, 130, 246, 0.3);
             border-radius: 30px;
             padding: 5rem 3rem;
-            position: relative;
             backdrop-filter: blur(20px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(59, 130, 246, 0.1);
         }
 
         .cta-box h2 {
-            font-family: var(--font-heading);
             font-size: 3rem;
             margin-bottom: 1.5rem;
             background: linear-gradient(135deg, #fff, var(--text-muted));
@@ -775,7 +727,6 @@
             margin: 0 auto 2.5rem;
         }
 
-        /* ================= CONTACT SECTION ================= */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -791,17 +742,16 @@
             padding: 2.5rem;
             text-align: center;
             backdrop-filter: blur(10px);
-            transition: var(--transition-smooth);
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1rem;
+            transition: var(--transition-smooth);
         }
 
         .contact-card:hover {
             border-color: var(--accent);
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
         .contact-icon {
@@ -817,21 +767,12 @@
             margin-bottom: 0.5rem;
         }
 
-        .contact-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
         .contact-card a {
             color: var(--text-muted);
-            font-size: 1rem;
-            transition: var(--transition-smooth);
             word-break: break-all;
         }
 
-        .contact-card a:hover {
-            color: var(--accent);
-        }
+        .contact-card a:hover { color: var(--accent); }
 
         /* ================= FOOTER ================= */
         footer {
@@ -851,18 +792,12 @@
         }
 
         .footer-logo {
-            font-family: var(--font-heading);
             font-size: 1.5rem;
             font-weight: 800;
             background: linear-gradient(135deg, #fff, var(--accent));
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-
-        .footer-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
         }
 
         .footer-socials {
@@ -873,19 +808,14 @@
         .footer-socials a {
             color: var(--text-muted);
             font-size: 1.25rem;
-            transition: var(--transition-smooth);
         }
 
-        .footer-socials a:hover {
-            color: var(--accent);
-            transform: translateY(-3px);
-        }
+        .footer-socials a:hover { color: var(--accent); }
 
         .footer-divider {
             width: 100%;
             height: 1px;
             background: var(--border-color);
-            margin: 1rem 0;
         }
 
         .copyright {
@@ -893,40 +823,14 @@
             font-size: 0.85rem;
         }
 
-        /* ================= ANIMATIONS & UTILS ================= */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            .reveal { opacity: 1; transform: none; transition: none; }
-            .scroll-indicator { animation: none; }
-        }
-
-        /* ================= RESPONSIVE DESIGN FIXED ================= */
+        /* ================= RESPONSIVE ================= */
         @media (max-width: 992px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            .hero h1 {
-                font-size: 2.8rem;
-            }
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .hero h1 { font-size: 2.8rem; }
         }
 
         @media (max-width: 768px) {
-            .nav-container {
-                padding: 0 1.2rem;
-            }
-
+            .nav-container { padding: 0 1.2rem; }
             .nav-menu {
                 position: fixed;
                 top: 0;
@@ -935,7 +839,6 @@
                 height: 100vh;
                 background: rgba(10, 12, 16, 0.98);
                 backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
@@ -943,81 +846,26 @@
                 z-index: 999;
                 gap: 2.5rem;
             }
-
-            [dir="ltr"] .nav-menu {
-                right: auto;
-                left: -100%;
-            }
-
-            .nav-menu.active {
-                right: 0;
-            }
-
-            [dir="ltr"] .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-link {
-                font-size: 1.25rem;
-            }
-
-            .hamburger {
-                display: block;
-                z-index: 1001;
-            }
-
-            .hero {
-                padding-top: 7rem;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-btns {
-                justify-content: center;
-            }
-
-            .cta-box {
-                padding: 3rem 1.5rem;
-            }
-
-            .cta-box h2 {
-                font-size: 2.2rem;
-            }
-
-            section {
-                padding: 5rem 1.2rem;
-            }
+            [dir="ltr"] .nav-menu { right: auto; left: -100%; }
+            .nav-menu.active { right: 0; }
+            [dir="ltr"] .nav-menu.active { left: 0; }
+            .hamburger { display: block; z-index: 1001; }
+            .hero { padding-top: 7rem; text-align: center; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { margin-left: auto; margin-right: auto; }
+            .hero-btns { justify-content: center; }
+            .cta-box { padding: 3rem 1.5rem; }
+            .cta-box h2 { font-size: 2.2rem; }
+            section { padding: 5rem 1.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ================= CONFIGURATION ================= -->
-    <script>
-        const siteConfig = {
-            name: "Ali Esmi",
-            nameFa: "علی اسمی",
-            title: "طراح و توسعه‌دهنده وب",
-            titleEn: "Web Designer & Developer",
-            email: "aesmi04@gmail.com",
-            telegram: "https://t.me/A_esmi",
-            linkedin: "https://www.linkedin.com/in/aliesmi/"
-        };
-    </script>
-
     <!-- ================= HEADER ================= -->
     <header id="header">
         <div class="nav-container">
-            <a href="#" class="logo-wrapper">
-                <img src="" alt="Ali Esmi" id="logo-img" style="display:none;">
+            <a href="#hero" class="logo-wrapper">
                 <span class="logo-placeholder" data-i18n="logoText">Ali Esmi</span>
             </a>
 
@@ -1049,18 +897,18 @@
         <div class="hero-fallback-bg"></div>
 
         <div class="container hero-content">
-            <div class="hero-badge reveal">
+            <div class="hero-badge">
                 <i class="fa-solid fa-sparkles"></i>
                 <span data-i18n="heroBadge">طراح و توسعه‌دهنده وب‌سایت‌های مدرن</span>
             </div>
-            <h1 class="reveal">
+            <h1>
                 <span data-i18n="heroTitle1">از ایده تا اجرا،</span><br>
                 <span data-i18n="heroTitle2">همراه شما در دنیای دیجیتال</span>
             </h1>
-            <p class="reveal" data-i18n="heroDesc">
+            <p data-i18n="heroDesc">
                 از یک ایده ساده تا یک تجربه دیجیتال حرفه‌ای، سفارشی و پرسرعت؛ وب‌سایت شما هویت برند شماست.
             </p>
-            <div class="hero-btns reveal">
+            <div class="hero-btns">
                 <a href="#portfolio" class="btn btn-primary">
                     <span data-i18n="btnPortfolio">مشاهده نمونه‌کارها</span>
                     <i class="fa-solid fa-arrow-left"></i>
@@ -1080,13 +928,13 @@
     <!-- ================= PORTFOLIO ================= -->
     <section id="portfolio">
         <div class="container">
-            <div class="section-title reveal">
+            <div class="section-title">
                 <h2 data-i18n="portfolioTitle">ایده‌ها وقتی دیده می‌شوند که درست اجرا شوند</h2>
                 <p data-i18n="portfolioSubtitle">منتخبی از پروژه‌های طراحی و توسعه وب</p>
             </div>
 
             <div class="portfolio-grid">
-                <div class="portfolio-card reveal">
+                <div class="portfolio-card">
                     <div class="portfolio-img-wrapper">
                         <div class="portfolio-placeholder-img">
                             <i class="fa-solid fa-image fa-2x"></i>
@@ -1109,7 +957,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card reveal">
+                <div class="portfolio-card">
                     <div class="portfolio-img-wrapper">
                         <div class="portfolio-placeholder-img">
                             <i class="fa-solid fa-image fa-2x"></i>
@@ -1132,7 +980,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card reveal">
+                <div class="portfolio-card">
                     <div class="portfolio-img-wrapper">
                         <div class="portfolio-placeholder-img">
                             <i class="fa-solid fa-image fa-2x"></i>
@@ -1162,7 +1010,7 @@
     <section id="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-text reveal">
+                <div class="about-text">
                     <h3 data-i18n="aboutTitle">پشت هر سایت خوب، یک تجربه خوب وجود دارد.</h3>
                     <p data-i18n="aboutDesc1">
                         من علی اسمی هستم. در دنیای امروز، داشتن یک وب‌سایت صرفاً به معنای داشتن کدهای روی صفحه نیست؛ بلکه خلق یک هویت، برقراری ارتباط عمیق با مخاطب و پاسخ دقیق به نیازهای کسب‌وکار شماست.
@@ -1177,7 +1025,7 @@
                     </div>
                 </div>
 
-                <div class="about-bento reveal">
+                <div class="about-bento">
                     <div class="bento-item">
                         <span class="bento-label" data-i18n="bentoNameLabel">نام و نام خانوادگی</span>
                         <span class="bento-value" data-i18n="bentoNameValue">علی اسمی</span>
@@ -1203,36 +1051,36 @@
         </div>
     </section>
 
-    <!-- ================= SKILLS / TOOLS ================= -->
+    <!-- ================= SKILLS ================= -->
     <section id="skills">
         <div class="container">
-            <div class="section-title reveal">
+            <div class="section-title">
                 <h2 data-i18n="skillsTitle">ابزارها و تکنولوژی‌ها</h2>
                 <p data-i18n="skillsSubtitle">فناوری‌هایی که برای خلق تجربیات دیجیتال استفاده می‌کنم</p>
             </div>
 
             <div class="skills-grid">
-                <div class="skill-card reveal">
+                <div class="skill-card">
                     <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
                     <h3>HTML5</h3>
                 </div>
-                <div class="skill-card reveal">
+                <div class="skill-card">
                     <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
                     <h3>CSS3 & SCSS</h3>
                 </div>
-                <div class="skill-card reveal">
+                <div class="skill-card">
                     <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
                     <h3>JavaScript Vanilla</h3>
                 </div>
-                <div class="skill-card reveal">
+                <div class="skill-card">
                     <div class="skill-icon"><i class="fa-brands fa-react"></i></div>
                     <h3>React.js</h3>
                 </div>
-                <div class="skill-card reveal">
+                <div class="skill-card">
                     <div class="skill-icon"><i class="fa-brands fa-wordpress"></i></div>
                     <h3>WooCommerce</h3>
                 </div>
-                <div class="skill-card reveal">
+                <div class="skill-card">
                     <div class="skill-icon"><i class="fa-solid fa-cube"></i></div>
                     <h3>Elementor Pro</h3>
                 </div>
@@ -1243,13 +1091,13 @@
     <!-- ================= EXPERIENCE ================= -->
     <section id="experience">
         <div class="container">
-            <div class="section-title reveal">
+            <div class="section-title">
                 <h2 data-i18n="expTitle">تجربیات و سوابق</h2>
                 <p data-i18n="expSubtitle">مسیر حرفه‌ای در طراحی و توسعه وب</p>
             </div>
 
             <div class="timeline">
-                <div class="timeline-item reveal">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date" data-i18n="exp1Date">۱۴۰۳ - اکنون</span>
@@ -1259,7 +1107,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item reveal">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date" data-i18n="exp2Date">۱۴۰۱ - ۱۴۰۳</span>
@@ -1269,7 +1117,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item reveal">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date" data-i18n="exp3Date">۱۳۹۹ - ۱۴۰۱</span>
@@ -1285,7 +1133,7 @@
     <!-- ================= FINAL CTA ================= -->
     <section class="final-cta">
         <div class="container">
-            <div class="cta-box reveal">
+            <div class="cta-box">
                 <h2 data-i18n="ctaHeading">ایده‌هات رو به من بسپار</h2>
                 <p data-i18n="ctaDesc">
                     اگر ایده‌ای برای یک وب‌سایت داری، بیایید با هم آن را به یک تجربه دیجیتال واقعی، شیک و پربازده تبدیل کنیم.
@@ -1301,25 +1149,25 @@
     <!-- ================= CONTACT ================= -->
     <section id="contact">
         <div class="container">
-            <div class="section-title reveal">
+            <div class="section-title">
                 <h2 data-i18n="contactTitle">ارتباط با من</h2>
                 <p data-i18n="contactSubtitle">آماده شنیدن ایده‌ها و پروژه‌های شما هستم</p>
             </div>
 
             <div class="contact-grid">
-                <div class="contact-card reveal">
+                <div class="contact-card">
                     <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                     <h3 data-i18n="contactEmailLabel">ایمیل مستقیم</h3>
                     <a href="mailto:aesmi04@gmail.com">aesmi04@gmail.com</a>
                 </div>
 
-                <div class="contact-card reveal">
+                <div class="contact-card">
                     <div class="contact-icon"><i class="fa-brands fa-telegram"></i></div>
                     <h3 data-i18n="contactTelegramLabel">تلگرام</h3>
                     <a href="https://t.me/A_esmi" target="_blank">t.me/A_esmi</a>
                 </div>
 
-                <div class="contact-card reveal">
+                <div class="contact-card">
                     <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
                     <h3 data-i18n="contactLinkedinLabel">لینکدین</h3>
                     <a href="https://www.linkedin.com/in/aliesmi/" target="_blank">in/aliesmi</a>
@@ -1332,7 +1180,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">Ali Esmi</div>
-            <p class="footer-desc" data-i18n="footerDesc">طراح سایت و توسعه‌دهنده وب | خلق تجربه‌های دیجیتال مدرن</p>
+            <p data-i18n="footerDesc" style="color: var(--text-muted);">طراح سایت و توسعه‌دهنده وب | خلق تجربه‌های دیجیتال مدرن</p>
             
             <div class="footer-socials">
                 <a href="mailto:aesmi04@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
@@ -1348,6 +1196,7 @@
 
     <!-- ================= JAVASCRIPT ================= -->
     <script>
+        /* --- Translations --- */
         const translations = {
             fa: {
                 logoText: "Ali Esmi",
@@ -1509,6 +1358,7 @@
             });
         }
 
+        /* --- Header Scroll Effect --- */
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -1518,6 +1368,7 @@
             }
         });
 
+        /* --- Mobile Menu & Links Click Fix --- */
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const navMenu = document.getElementById('navMenu');
 
@@ -1533,6 +1384,7 @@
             }
         });
 
+        // بستن منو و اجازه دادن به اسکرول صحیح هنگام کلیک روی لینک‌ها
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -1542,41 +1394,60 @@
             });
         });
 
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.15
-        });
+        /* --- Canvas Hero Animation --- */
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray = [];
 
-        revealElements.forEach(el => {
-            revealObserver.observe(el);
-        });
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
 
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(59, 130, 246, 0.5)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
 
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
+        function initParticles() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.width * canvas.height) / 15000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+        initParticles();
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
     </script>
 </body>
 </html>
