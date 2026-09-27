@@ -1,1230 +1,1582 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>علی اسمی | طراح و توسعه‌دهنده وب</title>
-<meta name="description" content="علی اسمی، طراح و توسعه‌دهنده وب‌سایت در مشهد. طراحی سایت‌های مدرن، حرفه‌ای و ریسپانسیو برای کسب‌وکارها و برندهای شخصی.">
-<meta name="author" content="Ali Esmi">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>علی اسمی | طراح و توسعه‌دهنده وب</title>
+    <meta name="description" content="پورتفولیو شخصی و برندینگ علی اسمی، طراح و توسعه‌دهنده وب‌سایت‌های مدرن، حرفه‌ای و سفارشی.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="علی اسمی | طراح و توسعه‌دهنده وب">
+    <meta property="og:description" content="از یک ایده ساده تا یک تجربه دیجیتال حرفه‌ای، همراه شما هستم.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aliesmi.ir">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ali Esmi | Web Designer & Developer">
-<meta property="og:description" content="طراحی و توسعه وب‌سایت‌های مدرن، مینیمال و حرفه‌ای — از ایده تا اجرا.">
-<meta property="og:image" content="assets/images/og-cover.jpg">
-<meta property="og:locale" content="fa_IR">
+    <!-- Font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- Favicon placeholder: replace with assets/images/favicon.ico when ready -->
-<link rel="icon" href="data:,">
+    <style>
+        /* ================= CSS VARIABLES & CONFIG ================= */
+        :root {
+            --bg-primary: #0a0c10;
+            --bg-secondary: #121620;
+            --bg-card: rgba(18, 22, 32, 0.7);
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.3);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(59, 130, 246, 0.4);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-heading: 'Javan', 'Vazirmatn', sans-serif;
+            --font-body: 'Vazirmatn', sans-serif;
+        }
 
-<!--
-  فونت فارسی «Vazirmatn» از طریق Google Fonts بارگذاری می‌شود (سبک و در دسترس).
-  اگر بارگذاری با شکست مواجه شود، فونت‌های سیستمی جایگزین می‌شوند و سایت همچنان کار می‌کند.
--->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        @font-face {
+            font-family: 'Javan';
+            src: url('assets/fonts/Javan.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
 
-<style>
-/* ==========================================================================
-   CONFIG / CSS VARIABLES — رنگ‌ها، فونت‌ها و مقادیر پایه سایت را اینجا تغییر دهید
-   ========================================================================== */
-:root{
-  /* رنگ‌ها */
-  --bg-primary:#06070d;
-  --bg-secondary:#0b0e18;
-  --bg-elevated:rgba(255,255,255,0.035);
-  --bg-elevated-strong:rgba(255,255,255,0.06);
-  --border-subtle:rgba(255,255,255,0.09);
-  --border-strong:rgba(255,255,255,0.16);
+        /* ================= RESET & BASE STYLES ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  --text-primary:#f3f5fa;
-  --text-muted:#98a1b8;
-  --text-faint:#5f6883;
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
 
-  --accent-1:#6d5efc;   /* آبی متمایل به بنفش */
-  --accent-2:#3d8bff;   /* آبی الکتریکی */
-  --accent-gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
 
-  --success:#39d98a;
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-smooth);
+        }
 
-  /* فونت‌ها */
-  /* فایل فونت Javan را در assets/fonts/ قرار داده و مسیر @font-face پایین را فعال کنید */
-  --font-heading: 'Javan', 'Vazirmatn', Tahoma, sans-serif;
-  --font-body: 'Vazirmatn', Tahoma, Arial, sans-serif;
+        ul {
+            list-style: none;
+        }
 
-  /* ابعاد */
-  --container-width: 1180px;
-  --radius-sm:10px;
-  --radius-md:16px;
-  --radius-lg:24px;
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
-  --transition-fast: 180ms ease;
-  --transition-med: 380ms cubic-bezier(.22,.61,.36,1);
-}
+        section {
+            padding: 7rem 2rem;
+            position: relative;
+        }
 
-/*
-  برای فعال‌سازی فونت Javan، فایل فونت را در assets/fonts/ قرار داده
-  و کامنت زیر را باز کنید:
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-  @font-face{
-    font-family:'Javan';
-    src: url('assets/fonts/javan.woff2') format('woff2');
-    font-weight: 400 800;
-    font-display: swap;
-  }
-*/
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
 
-*,*::before,*::after{box-sizing:border-box; margin:0; padding:0;}
-html{scroll-behavior:smooth;}
-body{
-  background:var(--bg-primary);
-  color:var(--text-primary);
-  font-family:var(--font-body);
-  line-height:1.7;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-img{max-width:100%; display:block;}
-a{color:inherit; text-decoration:none;}
-ul{list-style:none;}
-button{font:inherit; color:inherit; background:none; border:none; cursor:pointer;}
-.container{
-  width:100%;
-  max-width:var(--container-width);
-  margin:0 auto;
-  padding:0 24px;
-}
-h1,h2,h3,h4{
-  font-family:var(--font-heading);
-  font-weight:800;
-  line-height:1.28;
-  letter-spacing:-0.01em;
-}
-section{position:relative; padding:120px 0;}
-:focus-visible{outline:2px solid var(--accent-2); outline-offset:3px; border-radius:4px;}
+        .section-title h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 30%, var(--text-muted));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-/* دکمه‌ها */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:15px 32px;
-  border-radius:999px;
-  font-weight:600;
-  font-size:0.98rem;
-  transition:transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
-  white-space:nowrap;
-}
-.btn-primary{
-  background:var(--accent-gradient);
-  color:#fff;
-  box-shadow:0 8px 24px -8px rgba(109,94,252,0.55);
-}
-.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 30px -8px rgba(109,94,252,0.7);}
-.btn-outline{
-  border:1px solid var(--border-strong);
-  color:var(--text-primary);
-  background:rgba(255,255,255,0.02);
-}
-.btn-outline:hover{ border-color:var(--accent-2); background:rgba(61,139,255,0.08); transform:translateY(-2px);}
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
 
-.eyebrow{
-  color:var(--accent-2);
-  font-size:0.92rem;
-  font-weight:600;
-  margin-bottom:14px;
-  display:inline-block;
-}
+        /* ================= HEADER ================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition-smooth);
+            border-bottom: 1px solid transparent;
+        }
 
-/* ==========================================================================
-   HEADER
-   ========================================================================== */
-#site-header{
-  position:fixed;
-  top:0; inset-inline:0;
-  z-index:1000;
-  padding:22px 0;
-  background:transparent;
-  border-bottom:1px solid transparent;
-  transition:background var(--transition-med), padding var(--transition-med), border-color var(--transition-med), backdrop-filter var(--transition-med);
-}
-#site-header.scrolled{
-  padding:14px 0;
-  background:rgba(6,7,13,0.72);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--border-subtle);
-  box-shadow:0 10px 30px -18px rgba(0,0,0,0.6);
-}
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-}
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-family:var(--font-heading);
-  font-weight:800;
-  font-size:1.25rem;
-}
-.logo img{height:38px; width:auto;}
-.logo-fallback{
-  display:none;
-  align-items:center;
-  justify-content:center;
-  width:40px; height:40px;
-  border-radius:12px;
-  background:var(--accent-gradient);
-  color:#fff;
-  font-weight:800;
-  font-size:1rem;
-}
-.main-nav ul{
-  display:flex;
-  align-items:center;
-  gap:34px;
-}
-.main-nav a{
-  font-size:0.96rem;
-  color:var(--text-muted);
-  position:relative;
-  transition:color var(--transition-fast);
-}
-.main-nav a::after{
-  content:"";
-  position:absolute;
-  bottom:-6px; right:0; left:0;
-  height:2px;
-  background:var(--accent-gradient);
-  transform:scaleX(0);
-  transform-origin:center;
-  transition:transform var(--transition-fast);
-}
-.main-nav a:hover{color:var(--text-primary);}
-.main-nav a:hover::after{transform:scaleX(1);}
+        header.scrolled {
+            background: rgba(10, 12, 16, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
 
-.header-actions{display:flex; align-items:center; gap:18px;}
-.lang-switch{
-  display:flex; align-items:center; gap:8px;
-  font-size:0.86rem; font-weight:700;
-  border:1px solid var(--border-subtle);
-  border-radius:999px;
-  padding:6px 14px;
-}
-.lang-switch button{color:var(--text-faint); transition:color var(--transition-fast);}
-.lang-switch button.active{color:var(--accent-2);}
-.lang-switch span{color:var(--border-strong);}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.hamburger{
-  display:none;
-  flex-direction:column;
-  gap:5px;
-  width:26px;
-}
-.hamburger span{
-  height:2px; width:100%;
-  background:var(--text-primary);
-  border-radius:2px;
-  transition:transform var(--transition-fast), opacity var(--transition-fast);
-}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
 
-/* ==========================================================================
-   HERO
-   ========================================================================== */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  padding-top:120px;
-  overflow:hidden;
-}
-.hero-animation{
-  position:absolute; inset:0;
-  z-index:0;
-  background:
-    radial-gradient(circle at 18% 22%, rgba(109,94,252,0.22), transparent 55%),
-    radial-gradient(circle at 82% 78%, rgba(61,139,255,0.18), transparent 55%);
-}
-.hero-animation canvas{position:absolute; inset:0; width:100%; height:100%; opacity:0.75;}
-.hero-animation video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.5;}
-.hero-content{position:relative; z-index:1; max-width:760px;}
-.hero-content p.hero-kicker{color:var(--accent-2); font-weight:600; margin-bottom:18px; font-size:1rem;}
-.hero-content h1{
-  font-size:clamp(2.1rem, 4.6vw, 3.6rem);
-  margin-bottom:22px;
-}
-.hero-content .hero-sub{
-  color:var(--text-muted);
-  font-size:1.12rem;
-  max-width:600px;
-  margin-bottom:38px;
-}
-.hero-buttons{display:flex; gap:16px; flex-wrap:wrap;}
-.scroll-indicator{
-  position:absolute;
-  bottom:38px; left:50%;
-  transform:translateX(-50%);
-  width:26px; height:42px;
-  border:1px solid var(--border-strong);
-  border-radius:20px;
-  z-index:1;
-}
-.scroll-indicator span{
-  position:absolute;
-  top:8px; left:50%; transform:translateX(-50%);
-  width:4px; height:8px;
-  border-radius:3px;
-  background:var(--accent-2);
-  animation:scrollDot 1.8s infinite;
-}
-@keyframes scrollDot{
-  0%{ top:8px; opacity:1;}
-  70%{ top:22px; opacity:0;}
-  100%{ top:22px; opacity:0;}
-}
+        .logo-wrapper img {
+            height: 40px;
+            object-fit: contain;
+        }
 
-/* ==========================================================================
-   SECTION HEADINGS (shared)
-   ========================================================================== */
-.section-head{max-width:640px; margin-bottom:64px;}
-.section-head h2{font-size:clamp(1.7rem, 3vw, 2.5rem);}
-.section-head p{color:var(--text-muted); margin-top:16px; font-size:1.05rem;}
+        .logo-placeholder {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+            background: linear-gradient(135deg, var(--text-main), var(--accent));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-/* ==========================================================================
-   PORTFOLIO
-   ========================================================================== */
-.portfolio-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:28px;
-}
-.project-card{
-  background:var(--bg-elevated);
-  border:1px solid var(--border-subtle);
-  border-radius:var(--radius-md);
-  overflow:hidden;
-  transition:transform var(--transition-med), border-color var(--transition-med), box-shadow var(--transition-med);
-  display:flex; flex-direction:column;
-}
-.project-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(109,94,252,0.45);
-  box-shadow:0 24px 50px -24px rgba(61,90,255,0.35);
-}
-.project-thumb{
-  aspect-ratio:16/10;
-  background:linear-gradient(135deg, rgba(109,94,252,0.16), rgba(61,139,255,0.1));
-  display:flex; align-items:center; justify-content:center;
-  color:var(--text-faint);
-  font-size:0.9rem;
-  position:relative;
-  overflow:hidden;
-}
-.project-thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
-.project-body{padding:24px; display:flex; flex-direction:column; gap:12px; flex:1;}
-.project-type{color:var(--accent-2); font-size:0.84rem; font-weight:600;}
-.project-body h3{font-size:1.15rem;}
-.project-tech{display:flex; flex-wrap:wrap; gap:8px;}
-.project-tech span{
-  font-size:0.76rem;
-  padding:4px 11px;
-  border-radius:999px;
-  border:1px solid var(--border-subtle);
-  color:var(--text-muted);
-}
-.project-desc{color:var(--text-muted); font-size:0.92rem; flex:1;}
-.project-link{
-  color:var(--accent-2);
-  font-weight:600;
-  font-size:0.92rem;
-  margin-top:auto;
-  padding-top:6px;
-}
-.project-link:hover{text-decoration:underline;}
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
 
-/* ==========================================================================
-   ABOUT
-   ========================================================================== */
-.about-grid{
-  display:grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap:70px;
-  align-items:start;
-}
-.about-text h2{font-size:clamp(1.6rem,2.8vw,2.2rem); margin-bottom:22px;}
-.about-text p{color:var(--text-muted); font-size:1.03rem; margin-bottom:32px;}
-.about-links{display:flex; flex-direction:column; gap:14px;}
-.about-link{
-  display:flex; align-items:center; gap:14px;
-  padding:14px 18px;
-  border:1px solid var(--border-subtle);
-  border-radius:var(--radius-sm);
-  transition:border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
-}
-.about-link:hover{border-color:var(--accent-2); background:rgba(61,139,255,0.06); transform:translateX(-4px);}
-[dir="ltr"] .about-link:hover{transform:translateX(4px);}
-.about-link .icon{
-  width:38px; height:38px;
-  border-radius:10px;
-  background:var(--bg-elevated-strong);
-  display:flex; align-items:center; justify-content:center;
-  flex-shrink:0;
-}
-.about-link .icon svg{width:18px; height:18px;}
-.about-link .label{font-size:0.8rem; color:var(--text-faint);}
-.about-link .value{font-weight:600;}
+        .nav-link {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            position: relative;
+        }
 
-.info-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-.info-card{
-  background:var(--bg-elevated);
-  border:1px solid var(--border-subtle);
-  border-radius:var(--radius-md);
-  padding:22px;
-}
-.info-card.wide{grid-column:1 / -1;}
-.info-card .label{font-size:0.8rem; color:var(--text-faint); margin-bottom:8px;}
-.info-card .value{font-weight:700; font-size:1.05rem;}
-.info-card.status .value{color:var(--success);}
-.status-dot{
-  display:inline-block; width:8px; height:8px; border-radius:50%;
-  background:var(--success); margin-inline-end:8px;
-  box-shadow:0 0 0 4px rgba(57,217,138,0.16);
-}
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-main);
+        }
 
-/* ==========================================================================
-   SKILLS
-   ========================================================================== */
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(6, 1fr);
-  gap:18px;
-}
-.skill-badge{
-  background:var(--bg-elevated);
-  border:1px solid var(--border-subtle);
-  border-radius:var(--radius-md);
-  padding:26px 18px;
-  text-align:center;
-  transition:transform var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
-}
-.skill-badge:hover{
-  transform:translateY(-5px) scale(1.02);
-  border-color:rgba(61,139,255,0.5);
-  background:rgba(61,139,255,0.06);
-}
-.skill-badge .glyph{
-  width:44px; height:44px;
-  margin:0 auto 14px;
-  border-radius:12px;
-  background:var(--accent-gradient);
-  display:flex; align-items:center; justify-content:center;
-  color:#fff; font-weight:800; font-size:0.95rem;
-}
-.skill-badge .name{font-weight:600; font-size:0.92rem;}
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition-smooth);
+        }
 
-/* ==========================================================================
-   EXPERIENCE / TIMELINE
-   ========================================================================== */
-.timeline{position:relative; max-width:820px; margin:0 auto;}
-.timeline::before{
-  content:"";
-  position:absolute;
-  top:0; bottom:0;
-  right:7px;
-  width:1px;
-  background:var(--border-subtle);
-}
-[dir="ltr"] .timeline::before{right:auto; left:7px;}
-.timeline-item{
-  position:relative;
-  padding-inline-end:40px;
-  padding-bottom:52px;
-}
-.timeline-item:last-child{padding-bottom:0;}
-.timeline-item::before{
-  content:"";
-  position:absolute;
-  top:6px; right:0;
-  width:15px; height:15px;
-  border-radius:50%;
-  background:var(--bg-primary);
-  border:2px solid var(--accent-2);
-}
-[dir="ltr"] .timeline-item::before{right:auto; left:0;}
-.timeline-date{color:var(--accent-2); font-size:0.86rem; font-weight:600; margin-bottom:6px;}
-.timeline-item h3{font-size:1.12rem; margin-bottom:4px;}
-.timeline-item .company{color:var(--text-muted); font-size:0.94rem; margin-bottom:10px;}
-.timeline-item p.desc{color:var(--text-muted); font-size:0.95rem; max-width:600px;}
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
 
-/* ==========================================================================
-   FINAL CTA
-   ========================================================================== */
-.cta-section{
-  padding:140px 0;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-  background:var(--bg-secondary);
-}
-.cta-glow{
-  position:absolute; inset:0;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(109,94,252,0.35), transparent 45%),
-    radial-gradient(circle at 75% 70%, rgba(61,139,255,0.3), transparent 45%);
-  filter:blur(10px);
-}
-.cta-section .container{position:relative; z-index:1;}
-.cta-section h2{font-size:clamp(2rem, 4.4vw, 3.2rem); margin-bottom:20px;}
-.cta-section p{color:var(--text-muted); max-width:520px; margin:0 auto 40px; font-size:1.08rem;}
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-/* ==========================================================================
-   CONTACT
-   ========================================================================== */
-.contact-grid{
-  display:grid;
-  grid-template-columns:0.9fr 1.1fr;
-  gap:60px;
-}
-.contact-cards{display:flex; flex-direction:column; gap:16px;}
-.contact-card{
-  display:flex; align-items:center; gap:16px;
-  padding:20px;
-  border:1px solid var(--border-subtle);
-  border-radius:var(--radius-md);
-  background:var(--bg-elevated);
-  transition:border-color var(--transition-fast), transform var(--transition-fast);
-}
-.contact-card:hover{border-color:var(--accent-2); transform:translateY(-3px);}
-.contact-card .icon{
-  width:44px; height:44px; border-radius:12px;
-  background:var(--bg-elevated-strong);
-  display:flex; align-items:center; justify-content:center;
-  flex-shrink:0;
-}
-.contact-card .icon svg{width:20px; height:20px;}
-.contact-card .label{font-size:0.8rem; color:var(--text-faint);}
-.contact-card .value{font-weight:600;}
+        .lang-switcher {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-weight: 600;
+        }
 
-.contact-form{
-  background:var(--bg-elevated);
-  border:1px solid var(--border-subtle);
-  border-radius:var(--radius-lg);
-  padding:34px;
-  display:flex; flex-direction:column; gap:18px;
-}
-.form-row{display:flex; flex-direction:column; gap:8px;}
-.form-row label{font-size:0.86rem; color:var(--text-muted);}
-.form-row input, .form-row textarea{
-  background:rgba(255,255,255,0.03);
-  border:1px solid var(--border-subtle);
-  border-radius:var(--radius-sm);
-  padding:13px 16px;
-  color:var(--text-primary);
-  font-family:inherit;
-  font-size:0.95rem;
-  transition:border-color var(--transition-fast);
-}
-.form-row input:focus, .form-row textarea:focus{border-color:var(--accent-2); outline:none;}
-.contact-form textarea{min-height:120px; resize:vertical;}
-.form-note{
-  font-size:0.82rem;
-  color:var(--text-faint);
-  background:rgba(255,255,255,0.02);
-  border:1px dashed var(--border-subtle);
-  border-radius:var(--radius-sm);
-  padding:12px 14px;
-}
-#form-feedback{font-size:0.88rem; color:var(--accent-2); min-height:20px;}
+        .lang-switcher:hover {
+            border-color: var(--accent);
+            background: var(--accent-glow);
+        }
 
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
-footer{
-  border-top:1px solid var(--border-subtle);
-  padding:48px 0;
-}
-.footer-inner{
-  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
-}
-.footer-brand strong{font-family:var(--font-heading); font-size:1.05rem; display:block;}
-.footer-brand span{color:var(--text-muted); font-size:0.9rem;}
-.footer-social{display:flex; gap:14px;}
-.footer-social a{
-  width:38px; height:38px; border-radius:10px;
-  border:1px solid var(--border-subtle);
-  display:flex; align-items:center; justify-content:center;
-  transition:border-color var(--transition-fast), transform var(--transition-fast);
-}
-.footer-social a:hover{border-color:var(--accent-2); transform:translateY(-3px);}
-.footer-social svg{width:16px; height:16px;}
-.footer-copy{
-  text-align:center;
-  color:var(--text-faint);
-  font-size:0.84rem;
-  margin-top:28px;
-  padding-top:24px;
-  border-top:1px solid var(--border-subtle);
-}
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.4rem;
+            padding: 0.2rem;
+        }
 
-/* ==========================================================================
-   SCROLL REVEAL
-   ========================================================================== */
-.reveal{opacity:0; transform:translateY(24px); transition:opacity 700ms ease, transform 700ms ease;}
-.reveal.is-visible{opacity:1; transform:translateY(0);}
+        /* ================= HERO SECTION ================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 8rem;
+            overflow: hidden;
+        }
 
-/* ==========================================================================
-   RESPONSIVE
-   ========================================================================== */
-@media (max-width: 980px){
-  .portfolio-grid{grid-template-columns:repeat(2,1fr);}
-  .skills-grid{grid-template-columns:repeat(3,1fr);}
-  .about-grid{grid-template-columns:1fr; gap:48px;}
-  .contact-grid{grid-template-columns:1fr; gap:40px;}
-}
-@media (max-width: 760px){
-  .main-nav{
-    position:fixed;
-    top:0; inset-inline-end:0;
-    height:100vh;
-    width:min(78vw, 320px);
-    background:rgba(8,10,18,0.98);
-    backdrop-filter:blur(16px);
-    padding:100px 32px 40px;
-    transform:translateX(100%);
-    transition:transform var(--transition-med);
-    border-inline-start:1px solid var(--border-subtle);
-  }
-  [dir="ltr"] .main-nav{transform:translateX(-100%);}
-  .main-nav.open{transform:translateX(0);}
-  .main-nav ul{flex-direction:column; align-items:flex-start; gap:26px;}
-  .hamburger{display:flex;}
-  section{padding:80px 0;}
-  .portfolio-grid{grid-template-columns:1fr;}
-  .skills-grid{grid-template-columns:repeat(2,1fr);}
-  .hero-buttons{flex-direction:column; align-items:stretch;}
-  .hero-buttons .btn{width:100%;}
-}
+        #hero-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        #hero-animation video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-@media (prefers-reduced-motion: reduce){
-  *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
-}
-</style>
+        .hero-fallback-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: var(--border-color);
+            color: var(--text-main);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--text-muted);
+            transform: translateY(-2px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator i {
+            font-size: 1rem;
+            color: var(--accent);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-8px) translateX(-50%); }
+            60% { transform: translateY(-4px) translateX(-50%); }
+        }
+
+        /* ================= PORTFOLIO ================= */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-hover);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(59, 130, 246, 0.1);
+        }
+
+        .portfolio-img-wrapper {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            background: #1a202c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-card:hover .portfolio-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-placeholder-img {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .portfolio-content {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .portfolio-tag {
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .portfolio-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .portfolio-techs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .portfolio-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .portfolio-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-link:hover {
+            color: var(--accent);
+        }
+
+        [dir="rtl"] .portfolio-link:hover i {
+            transform: translateX(-5px);
+        }
+
+        [dir="ltr"] .portfolio-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ================= ABOUT ME ================= */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .social-btn:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .about-bento {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .bento-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .bento-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .bento-label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .bento-value {
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .status-badge {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .status-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* ================= SKILLS / TOOLS ================= */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            background: rgba(18, 22, 32, 0.9);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(59, 130, 246, 0.15);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1);
+        }
+
+        .skill-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* ================= EXPERIENCE TIMELINE ================= */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        [dir="rtl"] .timeline::before { right: 20px; }
+        [dir="ltr"] .timeline::before { left: 20px; }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-right: 50px;
+        }
+
+        [dir="ltr"] .timeline-item {
+            padding-right: 0;
+            padding-left: 50px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        [dir="rtl"] .timeline-dot { right: 14px; }
+        [dir="ltr"] .timeline-dot { left: 14px; }
+
+        .timeline-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: var(--transition-smooth);
+        }
+
+        .timeline-content:hover {
+            border-color: var(--border-hover);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .timeline-content h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-company {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* ================= FINAL CTA ================= */
+        .final-cta {
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.05));
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 30px;
+            padding: 5rem 3rem;
+            position: relative;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(59, 130, 246, 0.1);
+        }
+
+        .cta-box h2 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff, var(--text-muted));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-box p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* ================= CONTACT SECTION ================= */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .contact-card a {
+            color: var(--text-muted);
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+            word-break: break-all;
+        }
+
+        .contact-card a:hover {
+            color: var(--accent);
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, var(--accent));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-divider {
+            width: 100%;
+            height: 1px;
+            background: var(--border-color);
+            margin: 1rem 0;
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ================= ANIMATIONS & UTILS ================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .reveal { opacity: 1; transform: none; transition: none; }
+            .scroll-indicator { animation: none; }
+        }
+
+        /* ================= RESPONSIVE DESIGN FIXED ================= */
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1.2rem;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(10, 12, 16, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
+                gap: 2.5rem;
+            }
+
+            [dir="ltr"] .nav-menu {
+                right: auto;
+                left: -100%;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            [dir="ltr"] .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-link {
+                font-size: 1.25rem;
+            }
+
+            .hamburger {
+                display: block;
+                z-index: 1001;
+            }
+
+            .hero {
+                padding-top: 7rem;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .cta-box {
+                padding: 3rem 1.5rem;
+            }
+
+            .cta-box h2 {
+                font-size: 2.2rem;
+            }
+
+            section {
+                padding: 5rem 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<!-- ================= CONFIGURATION ================= -->
-<!-- اطلاعات شخصی، لینک‌ها و مسیر فایل‌ها را از همین قسمت تغییر دهید -->
-<script>
-  const siteConfig = {
-    name: "Ali Esmi",
-    nameFa: "علی اسمی",
-    email: "aesmi04@gmail.com",
-    telegram: "https://t.me/A_esmi",
-    telegramHandle: "t.me/A_esmi",
-    linkedin: "https://www.linkedin.com/in/aliesmi/",
-    linkedinHandle: "in/aliesmi",
-    instagram: "", // لینک اینستاگرام را در صورت وجود اینجا قرار دهید
-    logoPath: "assets/images/logo.png",
-    heroVideoPath: "assets/videos/hero.mp4", // در صورت وجود ویدیو، مسیر آن را اینجا قرار دهید
-    defaultLang: "fa"
-  };
-</script>
-
-<!-- ================= HEADER ================= -->
-<header id="site-header">
-  <div class="container header-inner">
-    <a href="#home" class="logo">
-      <img src="assets/images/logo.png" alt="Ali Esmi"
-           onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
-      <span id="logo-fallback" class="logo-fallback">A.E</span>
-    </a>
-
-    <nav class="main-nav" id="main-nav">
-      <ul>
-        <li><a href="#home" data-i18n="nav.home">خانه</a></li>
-        <li><a href="#portfolio" data-i18n="nav.portfolio">نمونه‌کارها</a></li>
-        <li><a href="#about" data-i18n="nav.about">درباره من</a></li>
-        <li><a href="#skills" data-i18n="nav.skills">مهارت‌ها</a></li>
-        <li><a href="#experience" data-i18n="nav.experience">تجربه</a></li>
-        <li><a href="#contact" data-i18n="nav.contact">تماس</a></li>
-      </ul>
-    </nav>
-
-    <div class="header-actions">
-      <div class="lang-switch" id="lang-switch">
-        <button data-lang="fa" class="active">FA</button>
-        <span>|</span>
-        <button data-lang="en">EN</button>
-      </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-
-<!-- ================= HERO ================= -->
-<section id="home" class="hero">
-  <div id="hero-animation" class="hero-animation">
-    <!-- YOUR HERO ANIMATION HERE — می‌توانید این canvas را با انیمیشن دلخواه خود جایگزین کنید -->
-    <!-- <canvas id="hero-canvas"></canvas> -->
-    <!-- در صورت وجود ویدیو، خط زیر را باز کرده و canvas بالا را حذف کنید: -->
-    <video autoplay muted loop playsinline>
-      <source src="videos/vegeta-ultra-ego.3840x2160.mp4" type="video/mp4">
-    </video>
-   
-  </div>
-
-  <div class="container hero-content">
-    <p class="hero-kicker" data-i18n="hero.kicker">طراح و توسعه‌دهنده وب — مشهد</p>
-    <h1 data-i18n="hero.title">از یک ایده ساده، تا یک تجربه دیجیتال حرفه‌ای همراه شما هستم.</h1>
-    <p class="hero-sub" data-i18n="hero.subtitle">طراحی و توسعه وب‌سایت‌هایی که هم زیبا هستند، هم سریع، و هم دقیقاً همان چیزی که کسب‌وکار شما به آن نیاز دارد.</p>
-    <div class="hero-buttons">
-      <a href="#portfolio" class="btn btn-primary" data-i18n="hero.btn1">مشاهده نمونه‌کارها</a>
-      <a href="#contact" class="btn btn-outline" data-i18n="hero.btn2">تماس بگیرید</a>
-    </div>
-  </div>
-
-  <button class="scroll-indicator" id="scroll-indicator" aria-label="اسکرول به پایین"><span></span></button>
-</section>
-
-<!-- ================= PORTFOLIO ================= -->
-<section id="portfolio">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow" data-i18n="portfolio.eyebrow">نمونه‌کارها</span>
-      <h2 data-i18n="portfolio.title">ایده‌ها وقتی دیده می‌شوند که درست اجرا شوند.</h2>
-      <p data-i18n="portfolio.subtitle">بخشی از پروژه‌هایی که طراحی و توسعه داده‌ام — از سایت‌های شرکتی تا فروشگاه‌های آنلاین.</p>
-    </div>
-
-    <!--
-      برای افزودن پروژه جدید، کافیست یک بلوک .project-card مشابه زیر را کپی کرده
-      و تصویر، عنوان، تکنولوژی‌ها و توضیحات را جایگزین کنید.
-    -->
-    <div class="portfolio-grid">
-
-      <div class="project-card reveal">
-        <div class="project-thumb">
-          <!-- YOUR PROJECT IMAGE HERE -->
-          <img src="assets/images/project-1.jpg" alt="پروژه فروشگاه دیجی‌کالا استایل" loading="lazy"
-               onerror="this.style.display='none'; this.parentElement.textContent='تصویر پروژه ۱';">
-        </div>
-        <div class="project-body">
-          <span class="project-type" data-i18n="p1.type">فروشگاه آنلاین</span>
-          <h3 data-i18n="p1.title">فروشگاه اینترنتی نوین‌مارکت</h3>
-          <div class="project-tech"><span>HTML/CSS</span><span>JavaScript</span><span>WooCommerce</span></div>
-          <p class="project-desc" data-i18n="p1.desc">طراحی و پیاده‌سازی فروشگاه آنلاین با تمرکز بر سرعت بارگذاری و تجربه خرید ساده.</p>
-          <a href="#" class="project-link" data-i18n="portfolio.view">مشاهده پروژه</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-thumb">
-          <img src="assets/images/project-2.jpg" alt="پروژه سایت شرکتی" loading="lazy"
-               onerror="this.style.display='none'; this.parentElement.textContent='تصویر پروژه ۲';">
-        </div>
-        <div class="project-body">
-          <span class="project-type" data-i18n="p2.type">سایت شرکتی</span>
-          <h3 data-i18n="p2.title">وب‌سایت شرکت معماری آریانا</h3>
-          <div class="project-tech"><span>React</span><span>JavaScript</span><span>CSS</span></div>
-          <p class="project-desc" data-i18n="p2.desc">طراحی مینیمال و مدرن برای معرفی نمونه‌کارهای یک استودیوی معماری.</p>
-          <a href="#" class="project-link" data-i18n="portfolio.view">مشاهده پروژه</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-thumb">
-          <img src="assets/images/project-3.jpg" alt="پروژه لندینگ پیج" loading="lazy"
-               onerror="this.style.display='none'; this.parentElement.textContent='تصویر پروژه ۳';">
-        </div>
-        <div class="project-body">
-          <span class="project-type" data-i18n="p3.type">لندینگ پیج</span>
-          <h3 data-i18n="p3.title">لندینگ محصول اپلیکیشن فیتنس</h3>
-          <div class="project-tech"><span>HTML</span><span>CSS</span><span>Elementor</span></div>
-          <p class="project-desc" data-i18n="p3.desc">صفحه فرود با نرخ تبدیل بالا برای معرفی و فروش یک اپلیکیشن موبایل.</p>
-          <a href="#" class="project-link" data-i18n="portfolio.view">مشاهده پروژه</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-thumb">
-          <img src="assets/images/project-4.jpg" alt="پروژه وبلاگ شخصی" loading="lazy"
-               onerror="this.style.display='none'; this.parentElement.textContent='تصویر پروژه ۴';">
-        </div>
-        <div class="project-body">
-          <span class="project-type" data-i18n="p4.type">وبلاگ / محتوا</span>
-          <h3 data-i18n="p4.title">وبلاگ تخصصی حوزه گردشگری</h3>
-          <div class="project-tech"><span>HTML</span><span>JavaScript</span><span>CSS</span></div>
-          <p class="project-desc" data-i18n="p4.desc">ساختار محتوایی تمیز و خوانا با تمرکز بر سئو و سرعت.</p>
-          <a href="#" class="project-link" data-i18n="portfolio.view">مشاهده پروژه</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ================= ABOUT ME ================= -->
-<section id="about">
-  <div class="container about-grid">
-
-    <div class="about-text reveal">
-      <h2 data-i18n="about.title">پشت هر سایت خوب، یک تجربه خوب وجود دارد.</h2>
-      <p data-i18n="about.body">من صرفاً کدنویسی نمی‌کنم؛ روی طراحی، تجربه کاربری و ظاهر حرفه‌ای هر پروژه تمرکز می‌کنم تا سایتی که تحویل می‌دهم، هم زیبا باشد و هم واقعاً نیاز کسب‌وکار شما را پاسخ دهد. هر پروژه با ریسپانسیو بودن کامل، سرعت بالا و توجه به جزئیات طراحی می‌شود.</p>
-
-      <div class="about-links">
-        <a class="about-link" href="mailto:aesmi04@gmail.com">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg></span>
-          <span><span class="label" data-i18n="about.email">ایمیل</span><br><span class="value">aesmi04@gmail.com</span></span>
-        </a>
-        <a class="about-link" href="https://t.me/A_esmi" target="_blank" rel="noopener">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 4L3 11l6 2 2 6 3-4 5 3z"/></svg></span>
-          <span><span class="label" data-i18n="about.telegram">تلگرام</span><br><span class="value">t.me/A_esmi</span></span>
-        </a>
-        <a class="about-link" href="https://www.linkedin.com/in/aliesmi/" target="_blank" rel="noopener">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 10v6M8 8v.01M12 16v-3.5a1.5 1.5 0 013-0V16M12 12.5V16"/></svg></span>
-          <span><span class="label" data-i18n="about.linkedin">لینکدین</span><br><span class="value">in/aliesmi</span></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="about-info reveal">
-      <div class="info-grid">
-        <div class="info-card">
-          <div class="label" data-i18n="about.nameLabel">نام</div>
-          <div class="value">علی اسمی</div>
-        </div>
-        <div class="info-card">
-          <div class="label" data-i18n="about.roleLabel">عنوان</div>
-          <div class="value" data-i18n="about.role">طراح سایت</div>
-        </div>
-        <div class="info-card">
-          <div class="label" data-i18n="about.locationLabel">موقعیت</div>
-          <div class="value" data-i18n="about.location">مشهد</div>
-        </div>
-        <div class="info-card">
-          <div class="label" data-i18n="about.expertiseLabel">تخصص</div>
-          <div class="value" data-i18n="about.expertise">طراحی و توسعه وب</div>
-        </div>
-        <div class="info-card wide status">
-          <div class="label" data-i18n="about.statusLabel">وضعیت همکاری</div>
-          <div class="value"><span class="status-dot"></span><span data-i18n="about.status">آماده همکاری</span></div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= SKILLS ================= -->
-<section id="skills">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow" data-i18n="skills.eyebrow">ابزارها</span>
-      <h2 data-i18n="skills.title">ابزارهایی که با آن‌ها می‌سازم.</h2>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-badge reveal"><span class="glyph">H</span><div class="name">HTML</div></div>
-      <div class="skill-badge reveal"><span class="glyph">C</span><div class="name">CSS</div></div>
-      <div class="skill-badge reveal"><span class="glyph">JS</span><div class="name">JavaScript</div></div>
-      <div class="skill-badge reveal"><span class="glyph">R</span><div class="name">React</div></div>
-      <div class="skill-badge reveal"><span class="glyph">W</span><div class="name">WooCommerce</div></div>
-      <div class="skill-badge reveal"><span class="glyph">E</span><div class="name">Elementor</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= EXPERIENCE ================= -->
-<section id="experience">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow" data-i18n="exp.eyebrow">تجربه</span>
-      <h2 data-i18n="exp.title">مسیری که تا امروز طی کرده‌ام.</h2>
-    </div>
-
-    <!-- برای افزودن تجربه جدید، یک .timeline-item مشابه زیر اضافه کنید -->
-    <div class="timeline">
-      <div class="timeline-item reveal">
-        <div class="timeline-date">۱۴۰۳ — اکنون</div>
-        <h3 data-i18n="exp1.title">طراح و توسعه‌دهنده فریلنسر</h3>
-        <div class="company" data-i18n="exp1.company">همکاری مستقل با کسب‌وکارهای مختلف</div>
-        <p class="desc" data-i18n="exp1.desc">طراحی و توسعه وب‌سایت‌های اختصاصی برای برندهای شخصی و کسب‌وکارهای کوچک.</p>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-date">۱۴۰۲ — ۱۴۰۳</div>
-        <h3 data-i18n="exp2.title">توسعه‌دهنده فرانت‌اند</h3>
-        <div class="company" data-i18n="exp2.company">آژانس دیجیتال مارکتینگ (نمونه)</div>
-        <p class="desc" data-i18n="exp2.desc">پیاده‌سازی رابط کاربری چند پروژه فروشگاهی و شرکتی.</p>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-date">۱۴۰۱ — ۱۴۰۲</div>
-        <h3 data-i18n="exp3.title">شروع مسیر طراحی وب</h3>
-        <div class="company" data-i18n="exp3.company">پروژه‌های شخصی و آموزشی</div>
-        <p class="desc" data-i18n="exp3.desc">یادگیری HTML، CSS و جاوااسکریپت و ساخت اولین پروژه‌های واقعی.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FINAL CTA ================= -->
-<section class="cta-section">
-  <div class="cta-glow"></div>
-  <div class="container reveal">
-    <h2 data-i18n="cta.title">ایده‌هات رو به من بسپار</h2>
-    <p data-i18n="cta.body">اگر ایده‌ای برای یک وب‌سایت داری، بیایید با هم آن را به یک تجربه دیجیتال واقعی تبدیل کنیم.</p>
-    <a href="#contact" class="btn btn-primary" data-i18n="cta.btn">شروع یک پروژه</a>
-  </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section id="contact">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow" data-i18n="contact.eyebrow">تماس</span>
-      <h2 data-i18n="contact.title">بیایید صحبت کنیم.</h2>
-      <p data-i18n="contact.subtitle">از طریق هر کدام از راه‌های زیر می‌توانید با من در ارتباط باشید.</p>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-cards reveal">
-        <a class="contact-card" href="mailto:aesmi04@gmail.com">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg></span>
-          <span><span class="label">Email</span><br><span class="value">aesmi04@gmail.com</span></span>
-        </a>
-        <a class="contact-card" href="https://t.me/A_esmi" target="_blank" rel="noopener">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 4L3 11l6 2 2 6 3-4 5 3z"/></svg></span>
-          <span><span class="label">Telegram</span><br><span class="value">t.me/A_esmi</span></span>
-        </a>
-        <a class="contact-card" href="https://www.linkedin.com/in/aliesmi/" target="_blank" rel="noopener">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 10v6M8 8v.01M12 16v-3.5a1.5 1.5 0 013-0V16M12 12.5V16"/></svg></span>
-          <span><span class="label">LinkedIn</span><br><span class="value">in/aliesmi</span></span>
-        </a>
-      </div>
-
-      <form class="contact-form reveal" id="contact-form">
-        <div class="form-row">
-          <label for="cf-name" data-i18n="form.name">نام</label>
-          <input type="text" id="cf-name" name="name" required>
-        </div>
-        <div class="form-row">
-          <label for="cf-email" data-i18n="form.email">ایمیل</label>
-          <input type="email" id="cf-email" name="email" required>
-        </div>
-        <div class="form-row">
-          <label for="cf-message" data-i18n="form.message">پیام شما</label>
-          <textarea id="cf-message" name="message" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" data-i18n="form.send">ارسال پیام</button>
-        <p class="form-note" data-i18n="form.note">این فرم فعلاً بدون سرور است؛ برای ارتباط سریع‌تر از ایمیل یا تلگرام استفاده کنید.</p>
-        <p id="form-feedback"></p>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <strong>Ali Esmi</strong>
-        <span data-i18n="footer.tagline">طراح سایت و توسعه‌دهنده وب</span>
-      </div>
-      <div class="footer-social">
-        <a href="https://t.me/A_esmi" target="_blank" rel="noopener" aria-label="Telegram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 4L3 11l6 2 2 6 3-4 5 3z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/aliesmi/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 10v6M8 8v.01M12 16v-3.5a1.5 1.5 0 013-0V16M12 12.5V16"/></svg>
-        </a>
-        <a href="mailto:aesmi04@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="footer-copy">© 2026 Ali Esmi</div>
-  </div>
-</footer>
-
-<!-- ================= SCRIPTS ================= -->
-<script>
-(function(){
-  "use strict";
-
-  /* ---------------------------------------------------------------------
-     دیکشنری ترجمه — برای اضافه یا ویرایش متن‌ها همین‌جا تغییر دهید
-  --------------------------------------------------------------------- */
-  const translations = {
-    fa: {
-      "nav.home":"خانه", "nav.portfolio":"نمونه‌کارها", "nav.about":"درباره من",
-      "nav.skills":"مهارت‌ها", "nav.experience":"تجربه", "nav.contact":"تماس",
-
-      "hero.kicker":"طراح و توسعه‌دهنده وب — مشهد",
-      "hero.title":"از یک ایده ساده، تا یک تجربه دیجیتال حرفه‌ای همراه شما هستم.",
-      "hero.subtitle":"طراحی و توسعه وب‌سایت‌هایی که هم زیبا هستند، هم سریع، و هم دقیقاً همان چیزی که کسب‌وکار شما به آن نیاز دارد.",
-      "hero.btn1":"مشاهده نمونه‌کارها", "hero.btn2":"تماس بگیرید",
-
-      "portfolio.eyebrow":"نمونه‌کارها",
-      "portfolio.title":"ایده‌ها وقتی دیده می‌شوند که درست اجرا شوند.",
-      "portfolio.subtitle":"بخشی از پروژه‌هایی که طراحی و توسعه داده‌ام — از سایت‌های شرکتی تا فروشگاه‌های آنلاین.",
-      "portfolio.view":"مشاهده پروژه",
-      "p1.type":"فروشگاه آنلاین", "p1.title":"فروشگاه اینترنتی نوین‌مارکت", "p1.desc":"طراحی و پیاده‌سازی فروشگاه آنلاین با تمرکز بر سرعت بارگذاری و تجربه خرید ساده.",
-      "p2.type":"سایت شرکتی", "p2.title":"وب‌سایت شرکت معماری آریانا", "p2.desc":"طراحی مینیمال و مدرن برای معرفی نمونه‌کارهای یک استودیوی معماری.",
-      "p3.type":"لندینگ پیج", "p3.title":"لندینگ محصول اپلیکیشن فیتنس", "p3.desc":"صفحه فرود با نرخ تبدیل بالا برای معرفی و فروش یک اپلیکیشن موبایل.",
-      "p4.type":"وبلاگ / محتوا", "p4.title":"وبلاگ تخصصی حوزه گردشگری", "p4.desc":"ساختار محتوایی تمیز و خوانا با تمرکز بر سئو و سرعت.",
-
-      "about.title":"پشت هر سایت خوب، یک تجربه خوب وجود دارد.",
-      "about.body":"من صرفاً کدنویسی نمی‌کنم؛ روی طراحی، تجربه کاربری و ظاهر حرفه‌ای هر پروژه تمرکز می‌کنم تا سایتی که تحویل می‌دهم، هم زیبا باشد و هم واقعاً نیاز کسب‌وکار شما را پاسخ دهد. هر پروژه با ریسپانسیو بودن کامل، سرعت بالا و توجه به جزئیات طراحی می‌شود.",
-      "about.email":"ایمیل", "about.telegram":"تلگرام", "about.linkedin":"لینکدین",
-      "about.nameLabel":"نام", "about.roleLabel":"عنوان", "about.role":"طراح سایت",
-      "about.locationLabel":"موقعیت", "about.location":"مشهد",
-      "about.expertiseLabel":"تخصص", "about.expertise":"طراحی و توسعه وب",
-      "about.statusLabel":"وضعیت همکاری", "about.status":"آماده همکاری",
-
-      "skills.eyebrow":"ابزارها", "skills.title":"ابزارهایی که با آن‌ها می‌سازم.",
-
-      "exp.eyebrow":"تجربه", "exp.title":"مسیری که تا امروز طی کرده‌ام.",
-      "exp1.title":"طراح و توسعه‌دهنده فریلنسر", "exp1.company":"همکاری مستقل با کسب‌وکارهای مختلف", "exp1.desc":"طراحی و توسعه وب‌سایت‌های اختصاصی برای برندهای شخصی و کسب‌وکارهای کوچک.",
-      "exp2.title":"توسعه‌دهنده فرانت‌اند", "exp2.company":"آژانس دیجیتال مارکتینگ (نمونه)", "exp2.desc":"پیاده‌سازی رابط کاربری چند پروژه فروشگاهی و شرکتی.",
-      "exp3.title":"شروع مسیر طراحی وب", "exp3.company":"پروژه‌های شخصی و آموزشی", "exp3.desc":"یادگیری HTML، CSS و جاوااسکریپت و ساخت اولین پروژه‌های واقعی.",
-
-      "cta.title":"ایده‌هات رو به من بسپار",
-      "cta.body":"اگر ایده‌ای برای یک وب‌سایت داری، بیایید با هم آن را به یک تجربه دیجیتال واقعی تبدیل کنیم.",
-      "cta.btn":"شروع یک پروژه",
-
-      "contact.eyebrow":"تماس", "contact.title":"بیایید صحبت کنیم.",
-      "contact.subtitle":"از طریق هر کدام از راه‌های زیر می‌توانید با من در ارتباط باشید.",
-      "form.name":"نام", "form.email":"ایمیل", "form.message":"پیام شما", "form.send":"ارسال پیام",
-      "form.note":"این فرم فعلاً بدون سرور است؛ برای ارتباط سریع‌تر از ایمیل یا تلگرام استفاده کنید.",
-      "form.success":"ممنون! این فرم به سرور متصل نیست — لطفاً پیام را از طریق ایمیل یا تلگرام ارسال کنید.",
-
-      "footer.tagline":"طراح سایت و توسعه‌دهنده وب"
-    },
-    en: {
-      "nav.home":"Home", "nav.portfolio":"Portfolio", "nav.about":"About",
-      "nav.skills":"Skills", "nav.experience":"Experience", "nav.contact":"Contact",
-
-      "hero.kicker":"Web Designer & Developer — Mashhad",
-      "hero.title":"From a simple idea to a professional digital experience, I'm with you.",
-      "hero.subtitle":"Designing and building websites that look great, load fast, and actually solve what your business needs.",
-      "hero.btn1":"View Portfolio", "hero.btn2":"Get in Touch",
-
-      "portfolio.eyebrow":"Portfolio",
-      "portfolio.title":"Ideas are only seen when they're built right.",
-      "portfolio.subtitle":"A selection of projects I've designed and developed — from corporate sites to online stores.",
-      "portfolio.view":"View Project",
-      "p1.type":"Online Store", "p1.title":"NovinMarket Online Store", "p1.desc":"Designed and built an online store focused on fast load times and a simple checkout experience.",
-      "p2.type":"Corporate Site", "p2.title":"Ariana Architecture Studio", "p2.desc":"Minimal, modern design to showcase an architecture studio's portfolio.",
-      "p3.type":"Landing Page", "p3.title":"Fitness App Landing Page", "p3.desc":"A high-conversion landing page introducing and promoting a mobile app.",
-      "p4.type":"Blog / Content", "p4.title":"Travel Niche Blog", "p4.desc":"Clean, readable content structure focused on SEO and speed.",
-
-      "about.title":"Behind every great website is a great experience.",
-      "about.body":"I don't just write code — I focus on design, user experience, and a professional finish so the site I deliver is both beautiful and genuinely solves your business's needs. Every project is built fully responsive, fast, and detail-oriented.",
-      "about.email":"Email", "about.telegram":"Telegram", "about.linkedin":"LinkedIn",
-      "about.nameLabel":"Name", "about.roleLabel":"Title", "about.role":"Web Designer",
-      "about.locationLabel":"Location", "about.location":"Mashhad",
-      "about.expertiseLabel":"Expertise", "about.expertise":"Web Design & Development",
-      "about.statusLabel":"Availability", "about.status":"Available for work",
-
-      "skills.eyebrow":"Tools", "skills.title":"The tools I build with.",
-
-      "exp.eyebrow":"Experience", "exp.title":"The path I've taken so far.",
-      "exp1.title":"Freelance Designer & Developer", "exp1.company":"Independent collaboration with various businesses", "exp1.desc":"Designing and developing custom websites for personal brands and small businesses.",
-      "exp2.title":"Front-End Developer", "exp2.company":"Digital Marketing Agency (sample)", "exp2.desc":"Built the UI for several e-commerce and corporate projects.",
-      "exp3.title":"Started my web design journey", "exp3.company":"Personal & learning projects", "exp3.desc":"Learned HTML, CSS and JavaScript and built my first real projects.",
-
-      "cta.title":"Let me bring your idea to life",
-      "cta.body":"If you have an idea for a website, let's turn it into a real digital experience together.",
-      "cta.btn":"Start a Project",
-
-      "contact.eyebrow":"Contact", "contact.title":"Let's talk.",
-      "contact.subtitle":"Reach out through any of the channels below.",
-      "form.name":"Name", "form.email":"Email", "form.message":"Your message", "form.send":"Send Message",
-      "form.note":"This form isn't connected to a server yet — for a faster reply, use email or Telegram.",
-      "form.success":"Thanks! This form isn't connected to a server — please reach out via email or Telegram instead.",
-
-      "footer.tagline":"Web Designer & Developer"
-    }
-  };
-
-  /* ---------------------------------------------------------------------
-     تغییر زبان
-  --------------------------------------------------------------------- */
-  function getSavedLang(){
-    try{ return localStorage.getItem("ae-lang"); }catch(e){ return null; }
-  }
-  function saveLang(lang){
-    try{ localStorage.setItem("ae-lang", lang); }catch(e){}
-  }
-
-  function applyLanguage(lang){
-    const dict = translations[lang] || translations.fa;
-    document.documentElement.lang = lang === "fa" ? "fa" : "en";
-    document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
-
-    document.querySelectorAll("[data-i18n]").forEach(function(el){
-      const key = el.getAttribute("data-i18n");
-      if(dict[key] !== undefined){ el.textContent = dict[key]; }
-    });
-
-    document.querySelectorAll(".lang-switch button").forEach(function(btn){
-      btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
-    });
-
-    saveLang(lang);
-  }
-
-  document.getElementById("lang-switch").addEventListener("click", function(e){
-    const btn = e.target.closest("button[data-lang]");
-    if(!btn) return;
-    applyLanguage(btn.getAttribute("data-lang"));
-  });
-
-  applyLanguage(getSavedLang() || siteConfig.defaultLang || "fa");
-
-  /* ---------------------------------------------------------------------
-     هدر: تغییر حالت هنگام اسکرول
-  --------------------------------------------------------------------- */
-  const header = document.getElementById("site-header");
-  function onScroll(){
-    header.classList.toggle("scrolled", window.scrollY > 40);
-  }
-  window.addEventListener("scroll", onScroll, { passive:true });
-  onScroll();
-
-  /* ---------------------------------------------------------------------
-     منوی موبایل
-  --------------------------------------------------------------------- */
-  const hamburger = document.getElementById("hamburger");
-  const mainNav = document.getElementById("main-nav");
-  hamburger.addEventListener("click", function(){
-    const isOpen = mainNav.classList.toggle("open");
-    hamburger.classList.toggle("open", isOpen);
-    hamburger.setAttribute("aria-expanded", String(isOpen));
-  });
-  mainNav.querySelectorAll("a").forEach(function(a){
-    a.addEventListener("click", function(){
-      mainNav.classList.remove("open");
-      hamburger.classList.remove("open");
-      hamburger.setAttribute("aria-expanded","false");
-    });
-  });
-
-  /* ---------------------------------------------------------------------
-     Scroll Reveal با IntersectionObserver
-  --------------------------------------------------------------------- */
-  const revealEls = document.querySelectorAll(".reveal");
-  if("IntersectionObserver" in window){
-    const io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.add("is-visible");
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold:0.15 });
-    revealEls.forEach(function(el){ io.observe(el); });
-  } else {
-    revealEls.forEach(function(el){ el.classList.add("is-visible"); });
-  }
-
-  /* ---------------------------------------------------------------------
-     فرم تماس — فقط رابط کاربری، بدون ارسال واقعی (بدون بک‌اند)
-  --------------------------------------------------------------------- */
-  const form = document.getElementById("contact-form");
-  const feedback = document.getElementById("form-feedback");
-  form.addEventListener("submit", function(e){
-    e.preventDefault();
-    const lang = document.documentElement.lang === "fa" ? "fa" : "en";
-    feedback.textContent = translations[lang]["form.success"];
-  });
-
-  /* ---------------------------------------------------------------------
-     انیمیشن پیش‌فرض هیرو: شبکه ذرات متحرک روی Canvas
-     (این بخش را می‌توانید با انیمیشن یا ویدیوی دلخواه خود جایگزین کنید)
-  --------------------------------------------------------------------- */
-  const canvas = document.getElementById("hero-canvas");
-  const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if(canvas && !reduceMotion){
-    const ctx = canvas.getContext("2d");
-    let w, h, particles, rafId;
-
-    function resize(){
-      w = canvas.width = canvas.offsetWidth * devicePixelRatio;
-      h = canvas.height = canvas.offsetHeight * devicePixelRatio;
-    }
-
-    function createParticles(){
-      const count = Math.min(60, Math.floor((canvas.offsetWidth * canvas.offsetHeight) / 18000));
-      particles = Array.from({length:count}, function(){
-        return {
-          x: Math.random()*w, y: Math.random()*h,
-          vx:(Math.random()-0.5)*0.35*devicePixelRatio,
-          vy:(Math.random()-0.5)*0.35*devicePixelRatio,
-          r: (Math.random()*1.6+0.8)*devicePixelRatio
+    <!-- ================= CONFIGURATION ================= -->
+    <script>
+        const siteConfig = {
+            name: "Ali Esmi",
+            nameFa: "علی اسمی",
+            title: "طراح و توسعه‌دهنده وب",
+            titleEn: "Web Designer & Developer",
+            email: "aesmi04@gmail.com",
+            telegram: "https://t.me/A_esmi",
+            linkedin: "https://www.linkedin.com/in/aliesmi/"
         };
-      });
-    }
+    </script>
 
-    function step(){
-      ctx.clearRect(0,0,w,h);
-      particles.forEach(function(p){
-        p.x += p.vx; p.y += p.vy;
-        if(p.x < 0 || p.x > w) p.vx *= -1;
-        if(p.y < 0 || p.y > h) p.vy *= -1;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-        ctx.fillStyle = "rgba(140,150,255,0.55)";
-        ctx.fill();
-      });
-      for(let i=0;i<particles.length;i++){
-        for(let j=i+1;j<particles.length;j++){
-          const a = particles[i], b = particles[j];
-          const dx = a.x-b.x, dy = a.y-b.y;
-          const dist = Math.sqrt(dx*dx+dy*dy);
-          const maxDist = 140*devicePixelRatio;
-          if(dist < maxDist){
-            ctx.strokeStyle = "rgba(120,140,255," + (0.18*(1-dist/maxDist)) + ")";
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(a.x,a.y);
-            ctx.lineTo(b.x,b.y);
-            ctx.stroke();
-          }
+    <!-- ================= HEADER ================= -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="#" class="logo-wrapper">
+                <img src="" alt="Ali Esmi" id="logo-img" style="display:none;">
+                <span class="logo-placeholder" data-i18n="logoText">Ali Esmi</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active" data-i18n="navHome">خانه</a></li>
+                <li><a href="#portfolio" class="nav-link" data-i18n="navPortfolio">نمونه‌کارها</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="navAbout">درباره من</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n="navSkills">مهارت‌ها</a></li>
+                <li><a href="#experience" class="nav-link" data-i18n="navExperience">تجربه</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="navContact">تماس</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <button class="lang-switcher" id="langSwitcher" onclick="toggleLanguage()">EN</button>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section id="hero" class="hero">
+        <div id="hero-animation">
+            <video autoplay muted loop playsinline>
+                <source src="videos/vegeta-ultra-ego.3840x2160.mp4" type="video/mp4">
+            </video> 
+        </div>
+        <div class="hero-fallback-bg"></div>
+
+        <div class="container hero-content">
+            <div class="hero-badge reveal">
+                <i class="fa-solid fa-sparkles"></i>
+                <span data-i18n="heroBadge">طراح و توسعه‌دهنده وب‌سایت‌های مدرن</span>
+            </div>
+            <h1 class="reveal">
+                <span data-i18n="heroTitle1">از ایده تا اجرا،</span><br>
+                <span data-i18n="heroTitle2">همراه شما در دنیای دیجیتال</span>
+            </h1>
+            <p class="reveal" data-i18n="heroDesc">
+                از یک ایده ساده تا یک تجربه دیجیتال حرفه‌ای، سفارشی و پرسرعت؛ وب‌سایت شما هویت برند شماست.
+            </p>
+            <div class="hero-btns reveal">
+                <a href="#portfolio" class="btn btn-primary">
+                    <span data-i18n="btnPortfolio">مشاهده نمونه‌کارها</span>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span data-i18n="btnContact">تماس بگیرید</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span data-i18n="scrollDown">اسکرول کنید</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ================= PORTFOLIO ================= -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="portfolioTitle">ایده‌ها وقتی دیده می‌شوند که درست اجرا شوند</h2>
+                <p data-i18n="portfolioSubtitle">منتخبی از پروژه‌های طراحی و توسعه وب</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-img-wrapper">
+                        <div class="portfolio-placeholder-img">
+                            <i class="fa-solid fa-image fa-2x"></i>
+                            <span>YOUR PROJECT IMAGE HERE</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag" data-i18n="p1Tag">فروشگاهی / لوکس</span>
+                        <h3 data-i18n="p1Title">پلتفرم تجارت الکترونیک مدرن</h3>
+                        <p data-i18n="p1Desc">طراحی رابط کاربری اختصاصی، بهینه‌سازی سرعت و تجربه خرید بی‌نقص برای مشتریان.</p>
+                        <div class="portfolio-techs">
+                            <span class="tech-badge">HTML5/CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">UI/UX</span>
+                        </div>
+                        <a href="#contact" class="portfolio-link">
+                            <span data-i18n="viewProject">مشاهده پروژه</span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-img-wrapper">
+                        <div class="portfolio-placeholder-img">
+                            <i class="fa-solid fa-image fa-2x"></i>
+                            <span>YOUR PROJECT IMAGE HERE</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag" data-i18n="p2Tag">شخصی / برندینگ</span>
+                        <h3 data-i18n="p2Title">پورتفولیو حرفه‌ای معماری</h3>
+                        <p data-i18n="p2Desc">نمایشگاه آنلاین آثار معماری با طراحی مینیمال، انیمیشن‌های نرم و گالری تعاملی.</p>
+                        <div class="portfolio-techs">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS Grid</span>
+                            <span class="tech-badge">Vanilla JS</span>
+                        </div>
+                        <a href="#contact" class="portfolio-link">
+                            <span data-i18n="viewProject">مشاهده پروژه</span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-img-wrapper">
+                        <div class="portfolio-placeholder-img">
+                            <i class="fa-solid fa-image fa-2x"></i>
+                            <span>YOUR PROJECT IMAGE HERE</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag" data-i18n="p3Tag">شرکتی / استارتاپی</span>
+                        <h3 data-i18n="p3Title">وب‌سایت سرویس ابری هوش مصنوعی</h3>
+                        <p data-i18n="p3Desc">طراحی تکنولوژیک، تاریک و لوکس برای معرفی محصولات فناوری محور و SaaS.</p>
+                        <div class="portfolio-techs">
+                            <span class="tech-badge">Responsive</span>
+                            <span class="tech-badge">CSS Variables</span>
+                            <span class="tech-badge">SEO Friendly</span>
+                        </div>
+                        <a href="#contact" class="portfolio-link">
+                            <span data-i18n="viewProject">مشاهده پروژه</span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT ME ================= -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <h3 data-i18n="aboutTitle">پشت هر سایت خوب، یک تجربه خوب وجود دارد.</h3>
+                    <p data-i18n="aboutDesc1">
+                        من علی اسمی هستم. در دنیای امروز، داشتن یک وب‌سایت صرفاً به معنای داشتن کدهای روی صفحه نیست؛ بلکه خلق یک هویت، برقراری ارتباط عمیق با مخاطب و پاسخ دقیق به نیازهای کسب‌وکار شماست.
+                    </p>
+                    <p data-i18n="aboutDesc2">
+                        تمرکز اصلی من بر روی طراحی مدرن، تجربه کاربری (UX) روان، سرعت بالا، انیمیشن‌های ظریف و ریسپانسیو بودن کامل در تمامی دستگاه‌هاست تا برند شما در نگاه اول ماندگار شود.
+                    </p>
+                    <div class="social-links">
+                        <a href="mailto:aesmi04@gmail.com" class="social-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://t.me/A_esmi" target="_blank" class="social-btn" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="https://www.linkedin.com/in/aliesmi/" target="_blank" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="about-bento reveal">
+                    <div class="bento-item">
+                        <span class="bento-label" data-i18n="bentoNameLabel">نام و نام خانوادگی</span>
+                        <span class="bento-value" data-i18n="bentoNameValue">علی اسمی</span>
+                    </div>
+                    <div class="bento-item">
+                        <span class="bento-label" data-i18n="bentoTitleLabel">عنوان شغلی</span>
+                        <span class="bento-value" data-i18n="bentoTitleValue">طراح و توسعه‌دهنده وب</span>
+                    </div>
+                    <div class="bento-item">
+                        <span class="bento-label" data-i18n="bentoLocationLabel">موقعیت مکانی</span>
+                        <span class="bento-value" data-i18n="bentoLocationValue">مشهد، ایران</span>
+                    </div>
+                    <div class="bento-item">
+                        <span class="bento-label" data-i18n="bentoSpecialtyLabel">حوزه تخصصی</span>
+                        <span class="bento-value" data-i18n="bentoSpecialtyValue">طراحی و توسعه وب‌سایت</span>
+                    </div>
+                    <div class="bento-item">
+                        <span class="bento-label" data-i18n="bentoStatusLabel">وضعیت همکاری</span>
+                        <span class="status-badge" data-i18n="bentoStatusValue">آماده همکاری</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SKILLS / TOOLS ================= -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="skillsTitle">ابزارها و تکنولوژی‌ها</h2>
+                <p data-i18n="skillsSubtitle">فناوری‌هایی که برای خلق تجربیات دیجیتال استفاده می‌کنم</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+                    <h3>HTML5</h3>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                    <h3>CSS3 & SCSS</h3>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+                    <h3>JavaScript Vanilla</h3>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fa-brands fa-react"></i></div>
+                    <h3>React.js</h3>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fa-brands fa-wordpress"></i></div>
+                    <h3>WooCommerce</h3>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fa-solid fa-cube"></i></div>
+                    <h3>Elementor Pro</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="expTitle">تجربیات و سوابق</h2>
+                <p data-i18n="expSubtitle">مسیر حرفه‌ای در طراحی و توسعه وب</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date" data-i18n="exp1Date">۱۴۰۳ - اکنون</span>
+                        <h3 data-i18n="exp1Title">ارشد طراح وب و توسعه‌دهنده فرانت‌اند</h3>
+                        <div class="timeline-company" data-i18n="exp1Company">استودیو دیجیتال تخصصی</div>
+                        <p data-i18n="exp1Desc">طراحی و پیاده‌سازی وب‌سایت‌های سفارشی، بهینه‌سازی تجربه کاربری و هدایت پروژه‌های لوکس برندینگ.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date" data-i18n="exp2Date">۱۴۰۱ - ۱۴۰۳</span>
+                        <h3 data-i18n="exp2Title">طراح سایت و توسعه‌دهنده وردپرس</h3>
+                        <div class="timeline-company" data-i18n="exp2Company">آژانس دیجیتال مارکتینگ</div>
+                        <p data-i18n="exp2Desc">طراحی بیش از ۳۰ وب‌سایت شرکتی و فروشگاهی با المنتور و توسعه سفارشی قالب‌ها.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date" data-i18n="exp3Date">۱۳۹۹ - ۱۴۰۱</span>
+                        <h3 data-i18n="exp3Title">توسعه‌دهنده فرانت‌اند (آموزش و پروژه شخصی)</h3>
+                        <div class="timeline-company" data-i18n="exp3Company">فری‌لنسر</div>
+                        <p data-i18n="exp3Desc">شروع یادگیری تخصصی جاوا اسکریپت و طراحی وب، اجرای پروژه‌های کوچک و متوسط فریلنسری.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-box reveal">
+                <h2 data-i18n="ctaHeading">ایده‌هات رو به من بسپار</h2>
+                <p data-i18n="ctaDesc">
+                    اگر ایده‌ای برای یک وب‌سایت داری، بیایید با هم آن را به یک تجربه دیجیتال واقعی، شیک و پربازده تبدیل کنیم.
+                </p>
+                <a href="#contact" class="btn btn-primary">
+                    <span data-i18n="ctaBtn">شروع یک پروژه</span>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="contactTitle">ارتباط با من</h2>
+                <p data-i18n="contactSubtitle">آماده شنیدن ایده‌ها و پروژه‌های شما هستم</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card reveal">
+                    <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <h3 data-i18n="contactEmailLabel">ایمیل مستقیم</h3>
+                    <a href="mailto:aesmi04@gmail.com">aesmi04@gmail.com</a>
+                </div>
+
+                <div class="contact-card reveal">
+                    <div class="contact-icon"><i class="fa-brands fa-telegram"></i></div>
+                    <h3 data-i18n="contactTelegramLabel">تلگرام</h3>
+                    <a href="https://t.me/A_esmi" target="_blank">t.me/A_esmi</a>
+                </div>
+
+                <div class="contact-card reveal">
+                    <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <h3 data-i18n="contactLinkedinLabel">لینکدین</h3>
+                    <a href="https://www.linkedin.com/in/aliesmi/" target="_blank">in/aliesmi</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Ali Esmi</div>
+            <p class="footer-desc" data-i18n="footerDesc">طراح سایت و توسعه‌دهنده وب | خلق تجربه‌های دیجیتال مدرن</p>
+            
+            <div class="footer-socials">
+                <a href="mailto:aesmi04@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://t.me/A_esmi" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://www.linkedin.com/in/aliesmi/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <p class="copyright" data-i18n="copyright">© 2026 Ali Esmi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        const translations = {
+            fa: {
+                logoText: "Ali Esmi",
+                navHome: "خانه",
+                navPortfolio: "نمونه‌کارها",
+                navAbout: "درباره من",
+                navSkills: "مهارت‌ها",
+                navExperience: "تجربه",
+                navContact: "تماس",
+                heroBadge: "طراح و توسعه‌دهنده وب‌سایت‌های مدرن",
+                heroTitle1: "از ایده تا اجرا،",
+                heroTitle2: "همراه شما در دنیای دیجیتال",
+                heroDesc: "از یک ایده ساده تا یک تجربه دیجیتال حرفه‌ای، سفارشی و پرسرعت؛ وب‌سایت شما هویت برند شماست.",
+                btnPortfolio: "مشاهده نمونه‌کارها",
+                btnContact: "تماس بگیرید",
+                scrollDown: "اسکرول کنید",
+                portfolioTitle: "ایده‌ها وقتی دیده می‌شوند که درست اجرا شوند",
+                portfolioSubtitle: "منتخبی از پروژه‌های طراحی و توسعه وب",
+                p1Tag: "فروشگاهی / لوکس",
+                p1Title: "پلتفرم تجارت الکترونیک مدرن",
+                p1Desc: "طراحی رابط کاربری اختصاصی، بهینه‌سازی سرعت و تجربه خرید بی‌نقص برای مشتریان.",
+                p2Tag: "شخصی / برندینگ",
+                p2Title: "پورتفولیو حرفه‌ای معماری",
+                p2Desc: "نمایشگاه آنلاین آثار معماری با طراحی مینیمال، انیمیشن‌های نرم و گالری تعاملی.",
+                p3Tag: "شرکتی / استارتاپی",
+                p3Title: "وب‌سایت سرویس ابری هوش مصنوعی",
+                p3Desc: "طراحی تکنولوژیک، تاریک و لوکس برای معرفی محصولات فناوری محور و SaaS.",
+                viewProject: "مشاهده پروژه",
+                aboutTitle: "پشت هر سایت خوب، یک تجربه خوب وجود دارد.",
+                aboutDesc1: "من علی اسمی هستم. در دنیای امروز، داشتن یک وب‌سایت صرفاً به معنای داشتن کدهای روی صفحه نیست؛ بلکه خلق یک هویت، برقراری ارتباط عمیق با مخاطب و پاسخ دقیق به نیازهای کسب‌وکار شماست.",
+                aboutDesc2: "تمرکز اصلی من بر روی طراحی مدرن، تجربه کاربری (UX) روان، سرعت بالا، انیمیشن‌های ظریف و ریسپانسیو بودن کامل در تمامی دستگاه‌هاست تا برند شما در نگاه اول ماندگار شود.",
+                bentoNameLabel: "نام و نام خانوادگی",
+                bentoNameValue: "علی اسمی",
+                bentoTitleLabel: "عنوان شغلی",
+                bentoTitleValue: "طراح و توسعه‌دهنده وب",
+                bentoLocationLabel: "موقعیت مکانی",
+                bentoLocationValue: "مشهد، ایران",
+                bentoSpecialtyLabel: "حوزه تخصصی",
+                bentoSpecialtyValue: "طراحی و توسعه وب‌سایت",
+                bentoStatusLabel: "وضعیت همکاری",
+                bentoStatusValue: "آماده همکاری",
+                skillsTitle: "ابزارها و تکنولوژی‌ها",
+                skillsSubtitle: "فناوری‌هایی که برای خلق تجربیات دیجیتال استفاده می‌کنم",
+                expTitle: "تجربیات و سوابق",
+                expSubtitle: "مسیر حرفه‌ای در طراحی و توسعه وب",
+                exp1Date: "۱۴۰۳ - اکنون",
+                exp1Title: "ارشد طراح وب و توسعه‌دهنده فرانت‌اند",
+                exp1Company: "استودیو دیجیتال تخصصی",
+                exp1Desc: "طراحی و پیاده‌سازی وب‌سایت‌های سفارشی، بهینه‌سازی تجربه کاربری و هدایت پروژه‌های لوکس برندینگ.",
+                exp2Date: "۱۴۰۱ - ۱۴۰۳",
+                exp2Title: "طراح سایت و توسعه‌دهنده وردپرس",
+                exp2Company: "آژانس دیجیتال مارکتینگ",
+                exp2Desc: "طراحی بیش از ۳۰ وب‌سایت شرکتی و فروشگاهی با المنتور و توسعه سفارشی قالب‌ها.",
+                exp3Date: "۱۳۹۹ - ۱۴۰۱",
+                exp3Title: "توسعه‌دهنده فرانت‌اند (آموزش و پروژه شخصی)",
+                exp3Company: "فری‌لنسر",
+                exp3Desc: "شروع یادگیری تخصصی جاوا اسکریپت و طراحی وب، اجرای پروژه‌های کوچک و متوسط فریلنسری.",
+                ctaHeading: "ایده‌هات رو به من بسپار",
+                ctaDesc: "اگر ایده‌ای برای یک وب‌سایت داری، بیایید با هم آن را به یک تجربه دیجیتال واقعی، شیک و پربازده تبدیل کنیم.",
+                ctaBtn: "شروع یک پروژه",
+                contactTitle: "ارتباط با من",
+                contactSubtitle: "آماده شنیدن ایده‌ها و پروژه‌های شما هستم",
+                contactEmailLabel: "ایمیل مستقیم",
+                contactTelegramLabel: "تلگرام",
+                contactLinkedinLabel: "لینکدین",
+                footerDesc: "طراح سایت و توسعه‌دهنده وب | خلق تجربه‌های دیجیتال مدرن",
+                copyright: "© 2026 Ali Esmi. All rights reserved."
+            },
+            en: {
+                logoText: "Ali Esmi",
+                navHome: "Home",
+                navPortfolio: "Portfolio",
+                navAbout: "About Me",
+                navSkills: "Skills",
+                navExperience: "Experience",
+                navContact: "Contact",
+                heroBadge: "Modern Website Designer & Developer",
+                heroTitle1: "From Idea to Execution,",
+                heroTitle2: "Your Digital Partner",
+                heroDesc: "From a simple concept to a professional, high-performance digital experience; your website is your brand identity.",
+                btnPortfolio: "View Portfolio",
+                btnContact: "Get in Touch",
+                scrollDown: "Scroll Down",
+                portfolioTitle: "Ideas Come to Life When Executed Right",
+                portfolioSubtitle: "Selected web design and development projects",
+                p1Tag: "E-Commerce / Luxury",
+                p1Title: "Modern E-Commerce Platform",
+                p1Desc: "Custom UI design, performance optimization, and seamless shopping experience for customers.",
+                p2Tag: "Personal / Branding",
+                p2Title: "Professional Architecture Portfolio",
+                p2Desc: "Online showcase of architectural works with minimalist design and interactive galleries.",
+                p3Tag: "Corporate / Startup",
+                p3Title: "AI Cloud Service Website",
+                p3Desc: "Technological, dark, and luxurious design introducing tech-driven products and SaaS.",
+                viewProject: "View Project",
+                aboutTitle: "Behind Every Great Website Is a Great Experience.",
+                aboutDesc1: "I'm Ali Esmi. In today's world, having a website isn't just about code on a screen—it's about creating an identity, building deep connections with your audience, and precisely meeting your business goals.",
+                aboutDesc2: "My core focus is on modern design, smooth UX, high speed, subtle animations, and complete responsiveness across all devices.",
+                bentoNameLabel: "Full Name",
+                bentoNameValue: "Ali Esmi",
+                bentoTitleLabel: "Job Title",
+                bentoTitleValue: "Web Designer & Developer",
+                bentoLocationLabel: "Location",
+                bentoLocationValue: "Mashhad, Iran",
+                bentoSpecialtyLabel: "Specialty",
+                bentoSpecialtyValue: "Web Design & Development",
+                bentoStatusLabel: "Status",
+                bentoStatusValue: "Available for Hire",
+                skillsTitle: "Tools & Technologies",
+                skillsSubtitle: "Technologies I use to build digital experiences",
+                expTitle: "Experience & Background",
+                expSubtitle: "Professional journey in web design & development",
+                exp1Date: "2024 - Present",
+                exp1Title: "Senior Web Designer & Frontend Developer",
+                exp1Company: "Specialized Digital Studio",
+                exp1Desc: "Designing and implementing custom websites, optimizing UX, and guiding luxury branding projects.",
+                exp2Date: "2022 - 2024",
+                exp2Title: "Web Designer & WordPress Developer",
+                exp2Company: "Digital Marketing Agency",
+                exp2Desc: "Designed over 30 corporate and e-commerce websites with Elementor and custom theme development.",
+                exp3Date: "2020 - 2022",
+                exp3Title: "Frontend Developer (Self-Taught & Freelance)",
+                exp3Company: "Freelance",
+                exp3Desc: "Started specialized learning in JavaScript and web design, executing small to mid-size freelance projects.",
+                ctaHeading: "Trust Your Ideas with Me",
+                ctaDesc: "If you have an idea for a website, let's turn it into a real, stunning, and high-converting digital experience together.",
+                ctaBtn: "Start a Project",
+                contactTitle: "Get in Touch",
+                contactSubtitle: "Ready to hear your ideas and projects",
+                contactEmailLabel: "Direct Email",
+                contactTelegramLabel: "Telegram",
+                contactLinkedinLabel: "LinkedIn",
+                footerDesc: "Web Designer & Developer | Crafting Modern Digital Experiences",
+                copyright: "© 2026 Ali Esmi. All rights reserved."
+            }
+        };
+
+        let currentLang = 'fa';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'fa' ? 'en' : 'fa';
+            const switcher = document.getElementById('langSwitcher');
+            
+            if (currentLang === 'en') {
+                document.documentElement.setAttribute('lang', 'en');
+                document.documentElement.setAttribute('dir', 'ltr');
+                switcher.textContent = 'FA';
+            } else {
+                document.documentElement.setAttribute('lang', 'fa');
+                document.documentElement.setAttribute('dir', 'rtl');
+                switcher.textContent = 'EN';
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
         }
-      }
-      rafId = requestAnimationFrame(step);
-    }
 
-    function init(){
-      resize();
-      createParticles();
-    }
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
 
-    init();
-    step();
-    window.addEventListener("resize", function(){
-      cancelAnimationFrame(rafId);
-      init();
-      step();
-    });
-  }
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
 
-})();
-</script>
+        hamburgerBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = hamburgerBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
 
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = hamburgerBtn.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
